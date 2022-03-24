@@ -9,13 +9,32 @@ var userChoiceNum = window.confirm ("Do you want your password to include number
 var userChoiceLower = window.confirm ("Do you want your password to include lowercase letters?");
 var userChoiceUpper = window.confirm ("Do you want your password to contain uppercase letters?");
 
-pwdlength = [1,2,3,4,5,6,7,8,9,0];
+numbers = [1,2,3,4,5,6,7,8,9,0];
 specChar = ["!", "@", "#", "$", "%", "&"];
 lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 
 
-if (userChoicepwdlength < 8) {window.alert("Minimum is 8")
+if (userChoicepwdlength < 8 || > 128) {window.alert("Please choose a number between 8 and 128") {
+  else{//generate password this LENGTH}
+}
+  
+if (userChoiceSpecChar = true) {//join special characters array to pile  }{
+  else {// do not add this array to the pile}
+}
+
+if (userChoiceNum = true) {//add numbers to the pile}{
+  else {//do not add numbers}
+}
+
+if (userChoiceLower = true) {//add Lowercase}{
+  else {//do not add}
+}
+
+if (userChoiceUpper = true) {//add Uppercase}{
+  else {//do not add uppercase}
+}
+
 
 }
 
