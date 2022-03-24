@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  console.log("clicked the button is working");
+  //console.log("clicked the button is working");
 var userChoicepwdlength = window.prompt("How many characters would you like your password to be? (Choose between 8 and 128)");
 var userChoiceSpecChar = window.confirm("Do you want your password to include special characters?");
 var userChoiceNum = window.confirm ("Do you want your password to include numbers?");
@@ -13,37 +13,43 @@ numbers = [1,2,3,4,5,6,7,8,9,0];
 specChar = ["!", "@", "#", "$", "%", "&"];
 lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var passwordPool = []
 
+if (userChoicepwdlength <  8 ) {window.alert("Please choose a number between 8 and 128")}
+else {console.log ("You picked" + userChoicepwdlength);
+} 
 
-if (userChoicepwdlength < 8 & > 128) {window.alert("Please choose a number between 8 and 128") {
-  else{//generate password this LENGTH}
+    //generate password this LENGTH}
 }
   
-if (userChoiceSpecChar = true) {//join special characters array to pile  }{
-  else {// do not add this array to the pile}
-}
+if (userChoiceSpecChar = true) { passwordPool.concat(SpecChar)}//join special characters array to pile  }{
+  //else (userChoiceSpecChar = false) {// do not add this array to the pile}
+//}
 
-if (userChoiceNum = true) {//add numbers to the pile}{
-  else {//do not add numbers}
-}
+if (userChoiceNum = true) { passwordPool.concat(numbers)}//add numbers to the pile}{
+  //else (userChoiceNum = false) {//do not add numbers}
+//}
 
-if (userChoiceLower = true) {//add Lowercase}{
-  else {//do not add}
-}
+if (userChoiceLower = true) { passwordPool.concat(lowerCase)}//add Lowercase}{
+  //else (userChoiceLower = false) {//do not add}
+//}
 
-if (userChoiceUpper = true) {//add Uppercase}{
-  else {//do not add uppercase}
-}
+if (userChoiceUpper = true) {passwordPool.concat(uppercase)}//add Uppercase}{
+  //else (userChoiceUpper = false){//do not add uppercase}
+//}
 
-passWordArr.concat(numbers, specChar, lowerCase, upperCase);
+passwordPool.toString();
 
-}
+ //{
+  //return passwordPool[Math.floor(Math.random() userChoicepwdlength.length)];
+//};
+//}
 
-Math.floor(Math.random()*());
 
 
-  return "Generated password will go here";
-}
+
+ // return "Generated password will go here";
+//}
 
 // Write password to the #password input
 function writePassword() {
