@@ -1,6 +1,29 @@
 
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+function generatePassword() {
+  console.log("clicked the button is working");
+var userChoicepwdlength = window.prompt("How many characters would you like your password to be? (Choose between 8 and 128)");
+var userChoiceSpecChar = window.confirm("Do you want your password to include special characters?");
+var userChoiceNum = window.confirm ("Do you want your password to include numbers?");
+var userChoiceLower = window.confirm ("Do you want your password to include lowercase letters?");
+var userChoiceUpper = window.confirm ("Do you want your password to contain uppercase letters?");
+
+pwdlength = [1,2,3,4,5,6,7,8,9,0];
+specChar = ["!", "@", "#", "$", "%", "&"];
+lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+
+
+if (userChoicepwdlength < 8) {window.alert("Minimum is 8")
+
+}
+
+Math.floor(Math.random()*());
+
+
+  return "Generated password will go here";
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -44,9 +67,5 @@ generateBtn.addEventListener("click", writePassword);
 // TRANSFORMING or JOIN the array into a string []
 //Array.join('')
 
-//start
 
-function generatePassword(){
-    return "password";
-}
 
