@@ -1,5 +1,10 @@
 
 var generateBtn = document.querySelector("#generate");
+numbers = [1,2,3,4,5,6,7,8,9,0];
+specChar = ["!", "@", "#", "$", "%", "&"];
+lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+var passwordPool = [""]
 
 function generatePassword() {
   //console.log("clicked the button is working");
@@ -9,61 +14,58 @@ var userChoiceNum = window.confirm ("Do you want your password to include number
 var userChoiceLower = window.confirm ("Do you want your password to include lowercase letters?");
 var userChoiceUpper = window.confirm ("Do you want your password to contain uppercase letters?");
 
-numbers = [1,2,3,4,5,6,7,8,9,0];
-specChar = ["!", "@", "#", "$", "%", "&"];
-lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var passwordPool = []
-
 if (userChoicepwdlength <  8 ) {window.alert("Please choose a number between 8 and 128")}
-else {console.log ("You picked" + userChoicepwdlength);
-} 
-
-    //generate password this LENGTH}
-}
-  
-if (userChoiceSpecChar = true) { passwordPool.concat(SpecChar)}//join special characters array to pile  }{
+//else (userChoicepwdlength > 128) {window.alert("Please choose a number between 8 and 128")}
+//} 
+ 
+if (userChoiceSpecChar = true) { specChar.concat(passwordPool)}//join special characters array to pile  }{
   //else (userChoiceSpecChar = false) {// do not add this array to the pile}
 //}
 
-if (userChoiceNum = true) { passwordPool.concat(numbers)}//add numbers to the pile}{
+if (userChoiceNum = true) { numbers.concat(passwordPool)}//add numbers to the pile}{
   //else (userChoiceNum = false) {//do not add numbers}
 //}
 
-if (userChoiceLower = true) { passwordPool.concat(lowerCase)}//add Lowercase}{
+if (userChoiceLower = true) { lowerCase.concat(passwordPool)}//add Lowercase}{
   //else (userChoiceLower = false) {//do not add}
 //}
 
-if (userChoiceUpper = true) {passwordPool.concat(uppercase)}//add Uppercase}{
+if (userChoiceUpper = true) {upperCase.concat(passwordPool)}//add Uppercase}{
   //else (userChoiceUpper = false){//do not add uppercase}
 //}
 
 passwordPool.toString();
+console.log(passwordPool)
 
- //{
-  //return passwordPool[Math.floor(Math.random() userChoicepwdlength.length)];
-//};
-//}
+for (var i = 0; i <= userChoicepwdlength; i++) {
+Math.floor(Math.random() * passwordPool);
+  password += passwordPool.substring(min, max +1);
+ }
 
 
+return password;
 
-
- // return "Generated password will go here";
-//}
+}
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+passwordText.value = password;
 
 }
-
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 
+
+
+//generatePassword()
+//writePassword()
+// Add event listener to generate button
+
+
+//First draft psuedo coding (mostly from class)
 //1. create variables to save user input from prompts
 // passwordLength (how to turn string into an integer)
 // specialCharacters boolean
