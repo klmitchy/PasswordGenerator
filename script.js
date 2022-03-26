@@ -1,10 +1,10 @@
 
 var generateBtn = document.querySelector("#generate");
-numbers = [1,2,3,4,5,6,7,8,9,0];
-specChar = ["!", "@", "#", "$", "%", "&"];
-lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var passwordPool = [""]
+var numbers = [1,2,3,4,5,6,7,8,9,0];
+var specChar = ["!", "@", "#", "$", "%", "&"];
+var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
 
 function generatePassword() {
   //console.log("clicked the button is working");
@@ -13,37 +13,46 @@ var userChoiceSpecChar = window.confirm("Do you want your password to include sp
 var userChoiceNum = window.confirm ("Do you want your password to include numbers?");
 var userChoiceLower = window.confirm ("Do you want your password to include lowercase letters?");
 var userChoiceUpper = window.confirm ("Do you want your password to contain uppercase letters?");
+userChoicepwdlength = parseInt(userChoicepwdlength)
+var passwordPool = []
 
-if (userChoicepwdlength <  8 ) {window.alert("Please choose a number between 8 and 128")}
-//else (userChoicepwdlength > 128) {window.alert("Please choose a number between 8 and 128")}
-//} 
+
+if (userChoicepwdlength < 8 || userChoicepwdlength > 128) {window.alert("Please choose a number between 8 and 128");}
+  else if (userChoicepwdlength > 8 && userChoicepwdlength < 128) {
+    return;
+    
+  }
  
 if (userChoiceSpecChar = true) { specChar.concat(passwordPool)}//join special characters array to pile  }{
-  //else (userChoiceSpecChar = false) {// do not add this array to the pile}
-//}
+  else {
+  return// do not add this array to the pile}
+}
 
 if (userChoiceNum = true) { numbers.concat(passwordPool)}//add numbers to the pile}{
-  //else (userChoiceNum = false) {//do not add numbers}
-//}
+  else {
+    return//do not add numbers}
+}
 
 if (userChoiceLower = true) { lowerCase.concat(passwordPool)}//add Lowercase}{
-  //else (userChoiceLower = false) {//do not add}
-//}
+  else {
+    return//do not add}
+}
 
 if (userChoiceUpper = true) {upperCase.concat(passwordPool)}//add Uppercase}{
-  //else (userChoiceUpper = false){//do not add uppercase}
-//}
+  else {
+    return//do not add uppercase}
+}
 
 passwordPool.toString();
-console.log(passwordPool)
+//console.log(passwordPool)
 
 for (var i = 0; i <= userChoicepwdlength; i++) {
 Math.floor(Math.random() * passwordPool);
-  password += passwordPool.substring(min, max +1);
+  //password += passwordPool.length(0, +1);
  }
 
 
-return password;
+//return password;
 
 }
 
